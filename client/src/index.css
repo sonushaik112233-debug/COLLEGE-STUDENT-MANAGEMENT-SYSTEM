@@ -1,0 +1,512 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  color: #183b2a;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.auth-page {
+  min-height: 100vh;
+  padding: 28px;
+  background: #f0f8f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-layout {
+  width: 100%;
+  max-width: 1250px;
+  min-height: 720px;
+  display: grid;
+  grid-template-columns: 1fr 0.95fr;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 24px 80px rgba(34, 100, 55, 0.10);
+}
+
+/* LEFT WELCOME PANEL */
+
+.welcome-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 42px 48px 28px;
+  color: #183b2a;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 90% 15%,
+      rgba(255, 255, 255, 0.55),
+      transparent 35%
+    ),
+    linear-gradient(145deg, #d9f2dc 0%, #c2e9c9 55%, #a7ddb2 100%);
+}
+
+.welcome-panel::before,
+.welcome-panel::after {
+  content: "";
+  position: absolute;
+  right: -160px;
+  bottom: 60px;
+  border: 1px solid rgba(24, 59, 42, 0.12);
+  border-radius: 50%;
+}
+
+.welcome-panel::before {
+  width: 370px;
+  height: 370px;
+}
+
+.welcome-panel::after {
+  width: 250px;
+  height: 250px;
+  right: -100px;
+  bottom: 120px;
+}
+
+.brand {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.brand-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(24, 59, 42, 0.12);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.brand-highlight {
+  color: #367d43;
+}
+
+.welcome-content {
+  position: relative;
+  z-index: 1;
+  margin: auto 0;
+  padding: 45px 0;
+}
+
+.welcome-tag {
+  display: inline-block;
+  padding: 9px 13px;
+  border: 1px solid rgba(24, 59, 42, 0.12);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.4);
+  color: #315d3a;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.welcome-content h1 {
+  margin: 26px 0 18px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(36px, 3.5vw, 49px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -2px;
+}
+
+.welcome-content h1 span {
+  color: #367d43;
+}
+
+.welcome-content > p {
+  max-width: 390px;
+  color: #42664a;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.feature-list {
+  display: grid;
+  gap: 23px;
+  margin-top: 35px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.feature-icon {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(24, 59, 42, 0.12);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.feature-item h3 {
+  margin: 0 0 5px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.feature-item p {
+  margin: 0;
+  color: #42664a;
+  font-size: 12px;
+}
+
+.welcome-footer {
+  position: relative;
+  z-index: 1;
+  color: #42664a;
+  font-size: 11px;
+}
+
+/* RIGHT LOGIN PANEL */
+
+.form-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 45px clamp(28px, 4vw, 65px);
+  background: #ffffff;
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 410px;
+  margin: 0 auto;
+}
+
+.mobile-brand {
+  display: none;
+}
+
+.form-eyebrow {
+  color: #367d43;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.form-heading h2 {
+  margin: 13px 0 10px;
+  color: #183b2a;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(24px, 2.3vw, 31px);
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.form-heading p {
+  margin: 0;
+  color: #718579;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* ADMIN AND STUDENT SELECTION */
+
+.role-selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.role-option {
+  min-height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 1px solid #dce9df;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #6b8071;
+  font-size: 13px;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+.role-option:hover {
+  border-color: #a7d9b2;
+}
+
+.role-option.selected {
+  border-color: #72b879;
+  background: #eaf8ee;
+  color: #367d43;
+  box-shadow: 0 0 0 2px rgba(114, 184, 121, 0.06);
+}
+
+/* LOGIN AND REGISTER TABS */
+
+.auth-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  margin: 20px 0 25px;
+  padding: 5px;
+  border-radius: 11px;
+  background: #f0f7f1;
+}
+
+.auth-tabs button {
+  padding: 11px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #718579;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.auth-tabs button.active {
+  background: #ffffff;
+  color: #367d43;
+  box-shadow: 0 2px 8px rgba(34, 80, 45, 0.08);
+}
+
+/* INPUT FIELDS */
+
+.field {
+  display: block;
+  margin-bottom: 17px;
+}
+
+.field > span {
+  display: block;
+  margin-bottom: 8px;
+  color: #365442;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.input-wrapper {
+  height: 47px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 14px;
+  border: 1px solid #dce9df;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #8ca494;
+  transition: 0.2s;
+}
+
+.input-wrapper:focus-within {
+  border-color: #72b879;
+  box-shadow: 0 0 0 3px rgba(114, 184, 121, 0.12);
+}
+
+.input-wrapper input {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #183b2a;
+  font-size: 13px;
+}
+
+.input-wrapper input::placeholder {
+  color: #9aafa0;
+}
+
+/* REMEMBER ME AND FORGOT PASSWORD */
+
+.form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0 0 22px;
+}
+
+.remember-option {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #718579;
+  font-size: 11px;
+}
+
+.remember-option input {
+  accent-color: #72b879;
+}
+
+.text-button {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #367d43;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* MAIN BUTTON */
+
+.submit-button {
+  width: 100%;
+  min-height: 49px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: none;
+  border-radius: 9px;
+  background: linear-gradient(110deg, #72b879, #9bd7a5);
+  color: #183b2a;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 6px 15px rgba(114, 184, 121, 0.19);
+  transition: 0.2s;
+}
+
+.submit-button:hover {
+  background: linear-gradient(110deg, #5ca765, #82c98e);
+  transform: translateY(-1px);
+}
+
+/* BOTTOM LINKS */
+
+.switch-account {
+  margin: 22px 0;
+  color: #718579;
+  text-align: center;
+  font-size: 12px;
+}
+
+.switch-account button {
+  margin-left: 5px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #367d43;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.admin-note {
+  margin: 22px 0;
+  color: #718579;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.form-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
+  color: #8ca494;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.form-divider::before,
+.form-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e5eee7;
+}
+
+.security-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 30px;
+  color: #8ca494;
+  font-size: 11px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+  .auth-page {
+    padding: 18px;
+  }
+
+  .auth-layout {
+    max-width: 600px;
+    grid-template-columns: 1fr;
+  }
+
+  .welcome-panel {
+    display: none;
+  }
+
+  .form-panel {
+    padding: 35px 28px;
+  }
+
+  .mobile-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 35px;
+    color: #367d43;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-page {
+    padding: 0;
+    background: #ffffff;
+  }
+
+  .auth-layout {
+    min-height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .form-panel {
+    padding: 28px 22px;
+  }
+
+  .form-heading h2 {
+    font-size: 25px;
+  }
+
+  .security-note {
+    margin-top: 25px;
+  }
+}
