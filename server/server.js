@@ -1,4 +1,3 @@
-
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -9,15 +8,22 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// ==================== API ROUTES ====================
+
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/admin", require("./routes/admin"));
 app.use("/api/subjects", require("./routes/subjects"));
+app.use("/api/student", require("./routes/student"));
+
+// ==================== SERVER STATUS ====================
 
 app.get("/", (req, res) => {
   res.json({
     message: "Student Management System API is running",
   });
 });
+
+// ==================== DATABASE HEALTH CHECK ====================
 
 app.get("/api/health", (req, res) => {
   res.json({
@@ -28,6 +34,16 @@ app.get("/api/health", (req, res) => {
         : "Disconnected",
   });
 });
+
+// ==================== TEMPORARY STUDENT ROUTE TEST ====================
+
+app.get("/api/student/route-test", (req, res) => {
+  res.json({
+    message: "Student routes are reaching the correct backend",
+  });
+});
+
+// ==================== SERVER STARTUP ====================
 
 const PORT = process.env.PORT || 5000;
 

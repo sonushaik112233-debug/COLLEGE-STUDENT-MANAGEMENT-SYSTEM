@@ -1,0 +1,10 @@
+ client/src/AdminAttendance.tsx |    0
+ client/src/App.tsx             | 3553 [32m+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m[31m---------[m
+ client/src/Marks.tsx           |  371 [32m+++++++++++[m
+ client/src/MarksManagement.tsx |  344 [32m++++++++++[m
+ package-lock.json              |    6 [32m+[m
+ server/models/Mark.js          |   68 [32m++[m
+ server/routes/admin.js         | 1141 [32m+++++++++++++++++++++++++++[m[31m------[m
+ server/routes/student.js       |  223 [32m+++++++[m
+ server/server.js               |   20 [32m+[m[31m-[m
+ 9 files changed, 5243 insertions(+), 483 deletions(-)
