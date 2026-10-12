@@ -96,10 +96,7 @@ export default function MarksPage() {
     loadData();
   }, []);
 
-  const selectedStudent = students.find(
-    (student) => student._id === studentId
-  );
-
+ 
   const filteredSubjects = subjects.filter(
     (subject) =>
       subject.semester === undefined ||
